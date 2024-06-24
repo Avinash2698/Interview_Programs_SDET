@@ -13,3 +13,30 @@ git push origin -d <branch-name> ---> to delete remote branch
 
 git reset --hard ---> reset changes (locally)
 git status ---> status (what files were modified/added)
+
+Stash: git stash command to save their changes in a stash stack.
+git stash
+git stash apply
+git stash list
+git stash apply 0
+git stash drop 0
+git stash clear
+
+Git stash vs. commit:
+The git stash and git commit commands are similar in that both take a snapshot 
+of modified files in the git working tree and store that snapshot for future reference.
+1.) A commit is part of the public git history; a stash is stored locally.
+2.) A commit creates a new save point on a branch; a stash reverts to a previous save point.
+
+Git stash vs. reset
+The git stash and the git reset commands are similar, as both commands revert all files in the 
+working directory back to the state at the point of the previous commit.
+1.) A reset creates a new commit point in the branch history. Stash doesn't.
+2.) A hard reset discards all changes. A stash saves a snapshot of all locally modified files.
+
+
+Git stash vs. stage
+Stage: Adds Work-In-Progress files to git index and these later will be commited.
+Stash: will simply stores uncommited changes locally.
+
+

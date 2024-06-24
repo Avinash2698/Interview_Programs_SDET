@@ -1,0 +1,15 @@
+Configurations:
+git config --global user.name Avinash2698 ---> to add user name
+git config --global user.email saiavinash389@gmail.com ---> to add gmail
+
+git init ---> to create local repository
+git add . ---> to add files to staging
+git commit -m "message" ---> to commit changes, changes are not yet to be in remote repo.
+git remote add origin <remote repo url> ---> establish connection to remote repo.
+git push origin master ---> push the changes to the master branch
+
+git branch -d <branch-Name> ---> to delete local branch
+git push origin -d <branch-name> ---> to delete remote branch
+
+git reset --hard ---> reset changes (locally)
+git status ---> status (what files were modified/added)

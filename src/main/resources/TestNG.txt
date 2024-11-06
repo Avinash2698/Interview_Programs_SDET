@@ -1,0 +1,199 @@
+TestNG - Testing framework used for unit,integration,end-2-end and functional testing.
+Test NG - Test Next Generation
+
+J-Unit vs TestNG:
+1.) More Annotations provided
+2.) parallel testing
+3.) provides data driven testing (using @DataProvider)
+
+Library - org.testng
+---------------------------------------------------------------------------------------------------------
+what is testng.xml? : TestNG XML File - config file that contains test execution details.
+
+order: TestSuite -> TestCases -> TestSteps
+<suite>
+	<test>
+		<classes>
+			<class>
+				<methods>
+				<include name"method_name"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+</suite>
+
+--------------------------------------------------------------------------------------------------------
+Assertions: Assert Class (static methods)
+
+Methods:
+assertEquals(actualValue, expectedValue, "Error Message If Failed")
+assertNotEquals(actualValue, expectedValue)
+assertTrue
+assertFalse
+assertNull
+assertNotNull
+
+Hard vs Soft Assertions:
+
+Assert - Hard Assertion
+SoftAssert - Soft Assertion
+
+Hard Assertion: Will throw exception immediately upon assertion failure.
+Soft Assertion: Test execution continues and exception is through at the end.
+	SoftAssert softAssert = new SoftAssert() //All non-static methods
+		softAssert.assertAll() - will throw all the recorded exceptions at once
+
+
+Annotations: it is a form of metadata that can be added to java source code(package,class,variables,methods,parameters)
+
+@Test
+@BeforeSuite
+@AfterSuite
+@BeforeClass
+@AfterClass
+@BeforeTest
+@AfterTest
+@BeforeMethod
+@AfterMethod
+@BeforeGroup
+@AfterGroup
+
+@DataProvider
+@Parameters
+@Optional
+@Ignore
+@Factory
+@Listeners
+
+-----------------------------------------------------------------------------------------------------------
+@Parameters:
+
+<parameter name="parameterName" value"parameterValue"/>
+//call parameter from XML file
+@Parameters("parameterName")
+
+//catch parameter and use in methods
+@Test
+public void demoMethod(String parameterName){
+}
+
+//to catch ,multiple parameters
+@Parameters({"userName", "password"})
+
+@Optional: should use inside method where parameters are passed.
+public void demoMethod(@Optional("optionalParam") String name)
+
+------------------------------------------------------------------------------------------------------------
+Enable/Disable test cases from XML file: 
+
+<suite name="abc">
+	<test name="xyz" enabled="false"> // to disable test case, by default its value is true.
+		<classes>
+			<class>
+				<methods>
+				<include name"method_name"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+</suite>
+
+-----------------------------------------------------------------------------------------------------------
+Prioritize Test cases:
+preserve-order="false" //if this is false then methods included in tests doesn't follow order.
+
+How to set priority: @Test(priority=1/2/3/4...)
+	1.) Default priority value is 0.
+	2.)we can pass negative values as priority as well.
+	3.)If same priority is set to multiple methods, then priority is based on ASCI values of the Methods.
+------------------------------------------------------------------------------------------------------------
+Ignore specific test methods:
+
+2 ways:
+	1.) @Test(enabled=false)
+	2.) add @Ignore annotation at the top of test method.
+		@Ignore
+		@Test
+	3.) compared to enabled, ignore tag has highest priority.
+	
+Ignore specific test class:
+	1.) place @Ignore at class level
+		@Ignore
+		public class demoClass{
+		
+		}
+
+Ignore specific package:
+	1.) create "package-info.java" file
+	2.) add package entry in the file.
+	3.) on top of that package, add @Ignore
+
+------------------------------------------------------------------------------------------------------------
+Grouping:
+
+@Test(groups={"smoke","regression"}) 
+
+In XML file add <groups> inside <test> tag:
+
+
+<suite name="abc">
+	<test name="xyz" enabled="false"> 
+		<groups>
+			<define name="dailyRuns"> //group of groups (Meta Group)
+				<include name="smoke" />
+				<include name="sanity" />
+			</define>
+			<define name="weeklyRuns">
+				<include name="regression" />
+			</define>
+			<run>
+				<include name="smoke" />
+				<exclude name="sanity" />
+				<include name="dailyRuns"> // to run meta groups
+			</run>
+		</groups>
+		<classes>
+			<class>
+				<methods>
+				<include name"method_name"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+</suite>
+
+
+Partial Group: Class Level Groups
+public class groups{
+
+@groups={"all"}
+@Test()
+method1{}
+
+@Test()
+method2{}
+}
+
+--------------------------------------------------------------------------------------------------
+
+Test Dependency:
+@Test(dependsOnMethods={"method1","method2"})
+
+Group Dependency:
+@Test(dependsOnGroups={"smoke","regression"}. alwaysRun=true)--> this test method will run even if any dependent method(s) in groups fails.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

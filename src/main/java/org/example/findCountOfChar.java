@@ -1,8 +1,6 @@
 package org.example;
 import java.util.*;
 
-import java.util.HashMap;
-
 public class findCountOfChar {
     public static void main(String[] args) {
         String str = "Automation Testing";
@@ -26,5 +24,6 @@ public class findCountOfChar {
         for(Map.Entry<Character,Integer> entrySet : entry){
             System.out.println(entrySet.getKey()+" "+entrySet.getValue());
         }
+        
+        }
     }
-}

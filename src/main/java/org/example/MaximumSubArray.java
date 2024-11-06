@@ -9,7 +9,7 @@ public class MaximumSubArray {
         int sum = 0;
         for (int i = 0; i < numbers.length; i++) {
             sum = sum + numbers[i];
-            if (max < sum) {
+            if (sum > max) {
                 max = sum;
             }
             if (sum < 0) {
@@ -17,5 +17,5 @@ public class MaximumSubArray {
             }
         }
         System.out.println(max);
-        }
+    }
 }

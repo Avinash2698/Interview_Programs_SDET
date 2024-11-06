@@ -3,7 +3,7 @@ package org.example;
 public class factorial {
     public static void main(String[] args) {
 //        factorials(5);
-        System.out.println(factorials(10));
+        System.out.println(factorials(5));
     }
 
     static int factorials(int num){

@@ -4,7 +4,7 @@ public class BinarySearch {
 
     public static void main(String[] args) {
         int[] arr = {1,3,5,9,10,11,12,15,20,25,30};
-        int numberToSearch = 31;
+        int numberToSearch = 30;
         System.out.println("Number found ? - "+searchNum(arr,numberToSearch));
     }
 

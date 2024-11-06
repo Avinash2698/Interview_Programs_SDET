@@ -14,6 +14,6 @@ public class RemoveDuplicates {
 
         System.out.println(num.stream().distinct().collect(Collectors.toList()));
 
-
+ 
     }
 }

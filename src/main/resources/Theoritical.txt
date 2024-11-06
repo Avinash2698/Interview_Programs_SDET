@@ -1,0 +1,94 @@
+Interface:
+1.) It lies on the same line of the class, only difference is Interface will have methods but not body.
+2.) Access Modifiers for variables defined in interface is Public/static/final
+3.) Interfaces can have implemented methods as well (introduced from Java 8), these methods should be default and static.
+4.) Can create Private methods in interface, for code reuse ability.
+----------------------------------------------------------------------------------------------------------------------------
+Abstract Class:
+1.) Lies between interface and class
+2.) contains both abstarct and concrete methods
+3.) cannot instanciate/create object for abstract class because of the abstract keyword
+4.) Access modifiers can be public/protected but not private(because child classes has to use the methods and variables) 
+----------------------------------------------------------------------------------------------------------------------------
+this keyword:
+
+1.) refers to class object-object scope is in class level.
+2.) this keyword is used to avoid confusion between class attributes and the parameters sent with the function with same name.
+-----------------------------------------------------------------------------------------------------------------------------
+Final keyword:
+1.) If class is marked as final then no classes can extend/inherit that class.
+2.) methods that are made finals cannot be overridden
+-----------------------------------------------------------------------------------------------------------------------------
+Access Specifiers:
+Default: Can be accessed anywhere in the package - Package level.
+Public: Can be accessed from other packages as well
+Protected: Can be access only by inherited classes
+private: Can be access only in the class - Class level
+------------------------------------------------------------------------------------------------------------------------------
+REST API:
+
+1.) REpresentational State Transfer, it is an architectural style that provides certain set of 
+rules/conditions on how an API should work.
+2.) API developers follow these rules to create REST API.
+------------------------------------------------------------------------------------------------------------------------------
+RESTFUL Services:
+1.) Web Services that follow REST Architectural style are called RESTFUL Services.
+------------------------------------------------------------------------------------------------------------------------------
+API vs WebServices:
+
+1.) WebServices are part of APIs
+2.) Web Services require network for transferring information.
+3.) Network requirement is optional in case of APIs as they are leveraged on databases.
+------------------------------------------------------------------------------------------------------------------------------
+SOAP vs REST:
+1.) SOAP - Simple Object Access Protocol.
+2.) SOAP support only XML data format
+3.) Use POST method to transfer data from client to server.
+4.) Heavy Weight protocol compared to REST.
+------------------------------------------------------------------------------------------------------------------------------
+1.) REST - REpresentational State Transfer
+2.) Supports XMLs and Jsons,plain texts data formats
+3.) Uses multiple HTTP Methods, GET/PUT/POST/PATCH/Delete
+------------------------------------------------------------------------------------------------------------------------------
+HTTP Methods:
+1.) HTTP : Hyper Text Transfer Protocol, its a communication protocol in client-server architecture, used to transfer text between client and server.
+2.) URL: Uniform Resource Locator (Address on the web) -> it is a reference to a resource that specifies its location on internet.
+	URI - Identifies the resources on the iNternet, but URL specifies the location of the resource.
+3.) Resources: Represents API/Collection which can be accessed from the Server.
+4.) Path Parameters: Used to point to a specific resource in the collection. Used for targeting/identifying unique resource in the API
+5.) Query Parameters: Used to sort/filter the resources
+	 In Path Parameters we are re-routing to another sub resource by providing ID etc.., 
+	 But in Query Parameters we are sorting/filtering the existing resource only. 
+6.) Headers and Cookies: Headers represent meta data associated with API request and response. 
+	Additional information which we send to API to process our request.
+
+Methods:
+GET : to retrive resource from server
+POST : to add resource to the server
+DELETE : to delete resource from the server
+PATCH : to update resource in the server, without altering entire resource
+PUT : to update resource in the server but also revamps entire resource.
+
+Status Codes:
+1xx - Informational
+	101 - Continue
+	102 - In Progress
+2xx - Success
+	200 - Ok
+	201 - Created
+	204 - No Content
+3xx - Redirection
+	307 - temporary Redirection
+	308 - Permanent Redirection
+4xx - Client Error
+	400 - Bad Request
+	401 - UnAuthorised
+	403 - Forbidden
+	404 - Not Found
+	429 - Too Many Requests
+5xx - Server Error
+	500 - Internal Server Error
+	503 - Service unavailable
+	504 - Gateway Timeout
+------------------------------------------------------------------------------------------------------------------------------
+	

@@ -1,8 +1,10 @@
 package org.example;
 
+import java.util.Arrays;
+
 public class PalindromeString {
     public static void main(String[] args) {
-        String str = "racecar";
+        String str = "12121";
         str = str.toLowerCase();
 
         if(isPalindrome(str)){
@@ -26,4 +28,5 @@ public class PalindromeString {
         }
         return true;
     }
+
 }

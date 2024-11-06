@@ -28,6 +28,15 @@
             <artifactId>juneau-marshall</artifactId>
             <version>9.0.1</version>
         </dependency>
+        
+<!-- https://mvnrepository.com/artifact/io.rest-assured/rest-assured -->
+<dependency>
+    <groupId>io.rest-assured</groupId>
+    <artifactId>rest-assured</artifactId>
+    <version>5.1.1</version>
+</dependency>
+
+
 
     </dependencies>
 

@@ -160,11 +160,45 @@ return driver.findElement(By.id(""));
 }
 
 
+------------------------------------------------------------------------------------------
+
+RestAssured: 
+
+To bypass https validations: 
+given().relaxedHTTPSValidations()...
+
+Store Sessions in Rest Assured:
+SessionFilter session = new SessionFilter(); 
+given().filter(session).... 
+-----------------------------------------------------------------------------------------
+read external json file in java: convert file to Bytes -> Bytes to String
+Convert file to Bytes : Files.readAllBytes(Paths.get("path of the file"))
+Convert Bytes to String: new String(Files.readAllBytes(Paths.get("path of the file")));  
+------------------------------------------------------------------------------------------
+Set Basic Auth:
+
+BasicAuthScheme basicAuthScheme = new BasicAuthScheme();
+basicAuthScheme.setUserName(apikey);
+basicAuthScheme.setPassword(app_Secret);
+
+req = new RequestSpecBuilder()
+             .setBaseUri("https://api-stgmars.com")
+             .setContentType(ContentType.JSON)
+             .setAuth(basicAuthScheme)
+             .build();
 
 
+---------------------------------------------------------------------------------------------
 
+Shadow Root in JAVA:
+String eleText = driver.findElement(<WebElement>).getShadowRoot().findElementt(<WebElementt>).getText();
 
+Shahdow Root in JS:
 
+var eleText = browser.execute(function(){ 
+	document.getElementByID(<shadowroot_class>).shadowRoot.querySelectorAll(<locator>).getText();
+}) 
 
+----------------------------------------------------------------------------------------------
 
 

@@ -2,7 +2,7 @@ package org.example;
 
 public class MaximumMultiplicationArray {
     public static void main(String[] args) {
-        int[] nums = {2, 3, -2, -5, 6, -1, 4};
+    	int[] nums = {2, 3, -2, -5, 6, -1, 4};
         int leftProduct = 1;
         int rightProduct = 1;
         int ans = nums[0];
@@ -17,6 +17,5 @@ public class MaximumMultiplicationArray {
             ans = Math.max(ans, Math.max(leftProduct, rightProduct));
         }
         System.out.println(ans);
-
     }
 }

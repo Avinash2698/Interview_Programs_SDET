@@ -9,7 +9,8 @@ public class TwoSum {
 
 //        List<Integer[]> list = new ArrayList<>();
         Map<Integer,Integer> map = new HashMap<>();
-        Set<List<Integer>> list = new HashSet<>();
+//        Set<List<Integer>> list = new HashSet<>();
+        List<List<Integer>> list = new ArrayList<>();
         for(int i=0;i<num.length;i++){
             int complement = target - num[i];
             if(map.containsKey(complement)){
